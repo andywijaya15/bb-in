@@ -58,7 +58,6 @@ const result = document.querySelector("#result");
 formKolbar.addEventListener("submit", (e) => {
     e.preventDefault();
     let i, j, text, loop;
-    // loop = inputBaris.value * inputKolom.value;
     loop = 0;
     text = "";
     for (j = 0; j < inputKolom.value; j++) {
@@ -67,7 +66,6 @@ formKolbar.addEventListener("submit", (e) => {
             loop++;
         }
         text += `\n`;
-        console.log(text);
     }
     result.textContent = text;
 });

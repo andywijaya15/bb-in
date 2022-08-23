@@ -67,6 +67,7 @@ formKolbar.addEventListener("submit", (e) => {
             loop++;
         }
         text += `\n`;
+        console.log(text);
     }
     result.textContent = text;
 });

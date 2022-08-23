@@ -51,34 +51,35 @@ const chosen = (input) => {
 })
 
 const formKolbar = document.querySelector("#formKolbar");
-    const inputBaris = document.querySelector("#baris");
-    const inputKolom = document.querySelector("#kolom");
-    const result = document.querySelector("#result");
+const inputBaris = document.querySelector("#baris");
+const inputKolom = document.querySelector("#kolom");
+const result = document.querySelector("#result");
 
-    formKolbar.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let i, j, text, loop;
-        loop = inputBaris.value * inputKolom.value;
-        text = "";
-        for (j = 0; j < inputKolom.value; j++) {
-            for (i = 0; i < inputBaris.value; i++) {
-                text += (loop) % 2 == 1 ? `X` : `O`;
-                loop--;
-            }
-            text += `\n`;
+formKolbar.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let i, j, text, loop;
+    // loop = inputBaris.value * inputKolom.value;
+    loop = 0;
+    text = "";
+    for (j = 0; j < inputKolom.value; j++) {
+        for (i = 0; i < inputBaris.value; i++) {
+            text += (loop + 1) % 2 == 1 ? `X` : `O`;
+            loop++;
         }
-        result.textContent = text;
-    });
+        text += `\n`;
+    }
+    result.textContent = text;
+});
 
-    const inputRev = document.querySelector("#numberreverse");
-    const btnRev = document.querySelector("#btnrev");
-    const resultInner = document.querySelector("#resultreverse");
+const inputRev = document.querySelector("#numberreverse");
+const btnRev = document.querySelector("#btnrev");
+const resultInner = document.querySelector("#resultreverse");
 
-    btnRev.addEventListener("click", () => {
-        let result;
-        result = "";
-        for (i = inputRev.value.length; i > 0; i--) {
-            result += inputRev.value.charAt(i - 1);
-        }
-        resultInner.textContent = result;
-    });
+btnRev.addEventListener("click", () => {
+    let result;
+    result = "";
+    for (i = inputRev.value.length; i > 0; i--) {
+        result += inputRev.value.charAt(i - 1);
+    }
+    resultInner.textContent = result;
+});
